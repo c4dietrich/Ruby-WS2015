@@ -16,12 +16,12 @@ class Lemma
   # liest gow datein ein, jede zeile wird gesplitet und das erste und dritte element in ein array gepackt
    array = Array.new
   File.open("/Users/clari/Documents/Uni/Skriptsprache/gow") do |file|
-   while file.gets != nil
-     line =file.gets
+   while line=file.gets
      var = line.split("\\")
      array << [var[1], var[3]]
 
    end
+
 
    #p array.length
    #p array[0,5]
@@ -31,8 +31,7 @@ class Lemma
   #liest gol datei ein, 0tes und 1stes element jeder zeile wird in ein array gesteckt
   arrayGOL= Array.new(1)
   File.open("/Users/clari/Documents/Uni/Skriptsprache/gol") do |file|
-    while file.gets !=nil
-      line =file.gets
+    while line =file.gets
       var2 = line.split("\\")
       arrayGOL << [var2[0], var2[1]]
 
@@ -46,8 +45,7 @@ class Lemma
    arrayMW= Array.new
    array2 = Array.new
    File.open("/Users/clari/Documents/Uni/Skriptsprache/gmw") do |file|
-     while file.gets !=nil
-       line =file.gets
+     while line = file.gets
        var2 = line.split("\\")
        arrayMW << [var2[1],var2[3], var2[-1]]
        array2 << var2[-1]
