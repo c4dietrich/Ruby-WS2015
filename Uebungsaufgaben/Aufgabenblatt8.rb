@@ -16,7 +16,7 @@ class TuebaDZ
       i +=1
       end
     end
-    #p @saetze[1]
+    #p @saetze
     p "eingelesen"
 
   end
@@ -32,8 +32,8 @@ class TuebaDZ
         @satz << zeile.chomp.split
       end
     end
-    #p @satz[0][0]
-    #p @satz.length
+    #p @satz
+
      @satz
   end
 
@@ -43,19 +43,16 @@ class TuebaDZ
 
     while i < @satz.length
     frequenz_woerterbuch[@satz[i][0]] = [@satz[i][1],@satz[i][2], @satz[i][3], frequenz(@satz[i][0])]
-    #p lexikon1.keys
-    #p lexikon1
+
       i += 1
     end
 
     p frequenz_woerterbuch
-   # p lexikon1.keys
 
   end
 
 
   def frequenz (wortform)
-    #lese_saetze("/Users/clari/Documents/Uni/Skriptsprache/tuebaDZ.txt")
 
     #p @saetze[0]
     i = 0
@@ -88,9 +85,7 @@ class TuebaDZ
       ausgabe += "[" + @saetze[0][i][2] + " "
 
       while i >  (laenge * -1)
-     # p var = @saetze[0][i-1][-1]
-      #gefunden= @saetze[0].assoc("#"+var)
-      #p gefunden
+
        if @saetze[k][i][0]  == "#"+@saetze[k][i-1][-1]
         ausgabe += "[ "+ @saetze[k][i-1][2]
 
